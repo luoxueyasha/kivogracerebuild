@@ -5,8 +5,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
@@ -40,6 +42,9 @@ public class KivograceRebuild
     public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+
+    public static final RegistryObject<Block> myblock = BLOCKS.register("myblock", ()->new Block(BlockBehaviour.Properties.of(Material.BAMBOO).strength(3).sound(SoundType.AMETHYST)));
+    public static final RegistryObject<Item> myblock_item = ITEMS.register("myblock",()->new BlockItem(myblock.get(), new Item.Properties().rarity(Rarity.EPIC)));
 
     public KivograceRebuild()
     {
