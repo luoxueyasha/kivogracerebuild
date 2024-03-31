@@ -2,7 +2,7 @@
 README WIP
 
 LICENCE:
-CODE: MIT
+CODE: GPLv3
 
 This project is not affiliated with Nexon, NEXON Games Co., Ltd. nor any their affiliator.
 
