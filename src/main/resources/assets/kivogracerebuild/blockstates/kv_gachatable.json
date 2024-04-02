@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "kivograce:block/kv_gachatable"
+    }
+  }
+}
