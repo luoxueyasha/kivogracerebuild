@@ -1,6 +1,7 @@
 package com.roseyasa.kivogracerebuild;
 
 import com.mojang.logging.LogUtils;
+import com.roseyasa.kivogracerebuild.item.TwistedGraceItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -44,7 +45,9 @@ public class KivograceRebuild
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 
     public static final RegistryObject<Block> myblock = BLOCKS.register("myblock", ()->new Block(BlockBehaviour.Properties.of(Material.BAMBOO).strength(3).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Item> myblock_item = ITEMS.register("myblock",()->new BlockItem(myblock.get(), new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> myblock_item = ITEMS.register("myblock",()->new BlockItem(myblock.get(), new Item.Properties().rarity(Rarity.EPIC).tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> TwistedGraceItem = ITEMS.register("twistedgraceitem", ()->new TwistedGraceItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     public KivograceRebuild()
     {
