@@ -1,3 +1,7 @@
 {
-  "block.kivogracerebuild.myblock": "myblock"
+  "block.kivogracerebuild.myblock": "myblock@debug",
+  "item.kivogracerebuild.twistedgraceitem": "Twisted Grace",
+  "message.twistedgraceitem.fail" : "Your mortal body is too dry to extract",
+  "message.twistedgraceitem.succ" : "Something left your body...",
+  "message.twistedgraceitem.miss" : "random number missed@debug"
 }

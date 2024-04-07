@@ -24,23 +24,30 @@ public class TwistedGraceItem extends Item {
         // check if player is in water, or something that can drown player
         net.minecraftforge.fluids.FluidType fluidType = pPlayer.getMaxHeightFluidType();
         if(!pPlayer.isInWater() || !fluidType.canDrownIn(pPlayer)){
-            pPlayer.displayClientMessage(Component.literal("not in fluid"),true);
+            pPlayer.displayClientMessage(Component.translatable("message.twistedgraceitem.fail"),true);
             return InteractionResultHolder.fail(itemstack);
         }
-        pPlayer.getCooldowns().addCooldown(this, 30);
+        pPlayer.getCooldowns().addCooldown(this, 20);
 
+        // first we apply 10 damage to player.
         pPlayer.hurt(DamageSource.MAGIC, 10);
-        itemstack = pPlayer.getItemInHand(pHand); // refresh
+
         // check if player is still alive
-        if(pPlayer.getHealth() > 0){
-            // if alive, then set health and hunger to 1
+        if(pPlayer.getHealth() > 0) {
+        // if alive, then set health and hunger to 1
             pPlayer.setHealth(1.0f);
             pPlayer.getFoodData().setFoodLevel(1);
         }
-        if(Math.random() <= 0.75) {
+
+        //if(Math.random() <= 0.75) {
+            // @debug: this item given needs to be replaced
             pPlayer.addItem(new ItemStack(KivograceRebuild.myblock_item.get())); // add item at last, no matter player is dead or alive
-            pPlayer.displayClientMessage(Component.literal("got item"), true);
+            pPlayer.displayClientMessage(Component.translatable("message.twistedgraceitem.succ"), true);
+            /* @debug: No Gacha
+        } else{
+            pPlayer.displayClientMessage(Component.translatable("message.twistedgraceitem.missed"), true);
         }
+        */
 
         return InteractionResultHolder.sidedSuccess(itemstack, pLevel.isClientSide());
     }
