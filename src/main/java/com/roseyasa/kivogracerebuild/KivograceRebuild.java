@@ -1,17 +1,13 @@
 package com.roseyasa.kivogracerebuild;
 
 import com.mojang.logging.LogUtils;
-import com.roseyasa.kivogracerebuild.item.TwistedGraceItem;
+import com.roseyasa.kivogracerebuild.init.ItemAndBlockRegister;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,6 +20,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -34,20 +31,17 @@ public class KivograceRebuild
     public static final String MODID = "kivogracerebuild";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
+
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
-    public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
-
-    public static final RegistryObject<Block> myblock = BLOCKS.register("myblock", ()->new Block(BlockBehaviour.Properties.of(Material.BAMBOO).strength(3).sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Item> myblock_item = ITEMS.register("myblock",()->new BlockItem(myblock.get(), new Item.Properties().rarity(Rarity.EPIC).tab(CreativeModeTab.TAB_MISC)));
-
-    public static final RegistryObject<Item> TwistedGraceItem = ITEMS.register("twistedgraceitem", ()->new TwistedGraceItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    // Creative tab registry
+    public static final CreativeModeTab TAB_KIVOGRACEREBUILD = new CreativeModeTab("kivogracerebuild") {
+        @Override
+        public @NotNull ItemStack makeIcon() {
+            return new ItemStack(ItemAndBlockRegister.TWISTEDGRACE_ITEM.get());
+        }
+    };
 
     public KivograceRebuild()
     {
