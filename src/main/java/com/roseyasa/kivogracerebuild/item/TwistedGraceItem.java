@@ -16,7 +16,7 @@ import static com.roseyasa.kivogracerebuild.KivograceRebuild.TAB_KIVOGRACEREBUIL
 
 public class TwistedGraceItem extends Item {
 
-    public static final String ITEM_NAME = "twistedgraceitem";
+    public static final String ITEM_NAME = "twisted_grace_item";
 
     public TwistedGraceItem() {
         super(new Item.Properties()
@@ -30,7 +30,7 @@ public class TwistedGraceItem extends Item {
         // check if player is in water, or something that can drown player
         net.minecraftforge.fluids.FluidType fluidType = pPlayer.getMaxHeightFluidType();
         if(!pPlayer.isInWater() || !fluidType.canDrownIn(pPlayer)){
-            pPlayer.displayClientMessage(Component.translatable("message.twistedgraceitem.fail"),true);
+            pPlayer.displayClientMessage(Component.translatable("message.twisted_grace_item.fail"),true);
             return InteractionResultHolder.fail(itemstack);
         }
         pPlayer.getCooldowns().addCooldown(this, 20);
@@ -49,10 +49,10 @@ public class TwistedGraceItem extends Item {
         //if(Math.random() <= 0.75) {
             // @debug: this item given needs to be replaced
             pPlayer.addItem(new ItemStack(ItemAndBlockRegister.BLUESHIFTINGSTONE_ITEM.get())); // add item at last, no matter player is dead or alive
-            pPlayer.displayClientMessage(Component.translatable("message.twistedgraceitem.succ"), true);
+            pPlayer.displayClientMessage(Component.translatable("message.twisted_grace_item.succ"), true);
             /* @debug: No Gacha
         } else{
-            pPlayer.displayClientMessage(Component.translatable("message.twistedgraceitem.missed"), true);
+            pPlayer.displayClientMessage(Component.translatable("message.twisted_grace_item.missed"), true);
         }
         */
 

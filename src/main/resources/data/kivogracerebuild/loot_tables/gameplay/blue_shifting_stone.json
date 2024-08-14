@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool"
+        },
+        {
+          "chance": 1,
+          "condition": "minecraft:random_chance_with_looting",
+          "looting_multiplier": 0.5
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "kivogracerebuild:twisted_grace_item",
+          "weight": 10
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

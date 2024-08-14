@@ -3,11 +3,11 @@
   "itemGroup.kivogracerebuild" : "Kivograce Rebuild",
 
   "block.kivogracerebuild.myblock": "myblock@debug", // @Deprecated
-  "item.kivogracerebuild.twistedgraceitem": "Twisted Grace",
-  "message.twistedgraceitem.fail" : "Your mortal body is too dry to extract",
-  "message.twistedgraceitem.succ" : "Something left your body...",
-  "message.twistedgraceitem.miss" : "random number missed@debug",
+  "item.kivogracerebuild.twisted_grace_item": "Twisted Grace",
+  "message.twisted_grace_item.fail" : "Your mortal body is too dry to extract",
+  "message.twisted_grace_item.succ" : "Something left your body...",
+  "message.twisted_grace_item.miss" : "random number missed@debug",
 
-  "item.kivogracerebuild.blueshiftingstoneitem": "Blue Shifting Stone",
-  "tooltip.blueshiftingstoneitem" : "A stone that stimulates life energy and seals it in a special way. If you use it to take someone's life..."
+  "item.kivogracerebuild.blue_shifting_stone_item": "Blue Shifting Stone",
+  "tooltip.blue_shifting_stone_item" : "A stone that stimulates life energy and seals it in a special way. If you use it to take someone's life..."
 }

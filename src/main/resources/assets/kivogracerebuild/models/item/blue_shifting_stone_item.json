@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "kivogracerebuild:item/twistedgraceitem"
+    "layer0": "kivogracerebuild:item/blue_shifting_stone_item"
   }
 }

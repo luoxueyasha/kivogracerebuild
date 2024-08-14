@@ -13,7 +13,7 @@ import java.util.List;
 import static com.roseyasa.kivogracerebuild.KivograceRebuild.TAB_KIVOGRACEREBUILD;
 
 public class BlueShiftingStoneItem extends SwordItem {
-    public static final String ITEM_NAME = "blueshiftingstoneitem";
+    public static final String ITEM_NAME = "blue_shifting_stone_item";
     public BlueShiftingStoneItem() {
         super(Tiers.IRON,
                 0,
@@ -25,7 +25,7 @@ public class BlueShiftingStoneItem extends SwordItem {
     public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
         super.appendHoverText(itemstack, world, list, flag);
         // 以特殊的方式激发生命能量并封存而成的石头，如果用它来夺取性命的话…
-        list.add(Component.translatable("tooltip.blueshiftingstoneitem"));
+        list.add(Component.translatable("tooltip.blue_shifting_stone_item"));
     }
 
 
