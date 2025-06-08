@@ -56,12 +56,12 @@ public class BlueShiftingStoneItem extends SwordItem {
                 }
                 if (pAttacker instanceof Player player && !player.level.isClientSide())
                     // 定向石发生了奇特的变化……
-                    player.displayClientMessage(Component.literal("\u5B9A\u5411\u77F3\u53D1\u751F\u4E86\u5947\u7279\u7684\u53D8\u5316\u2026\u2026"), true);
+                    player.displayClientMessage(Component.translatable("message.blue_shifting_stone_item.succ"), true);
             // }
         } else {
             if (pAttacker instanceof Player player && !player.level.isClientSide())
                 // 定向石在微微振动…
-                player.displayClientMessage(Component.literal("\u5B9A\u5411\u77F3\u5728\u5FAE\u5FAE\u632F\u52A8\u2026"), true);
+                player.displayClientMessage(Component.translatable("message.blue_shifting_stone_item.fail"), true);
         }
 
         return retval;

@@ -36,7 +36,7 @@ public class KivograceRebuild
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
     // Creative tab registry
-    public static final CreativeModeTab TAB_KIVOGRACEREBUILD = new CreativeModeTab("kivogracerebuild") {
+    public static final CreativeModeTab TAB_KIVOGRACEREBUILD = new CreativeModeTab(MODID) {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ItemAndBlockRegister.TWISTEDGRACE_ITEM.get());
